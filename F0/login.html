@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Servon https://github.com/Servon-Lee/web_tasks">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="keyword" content="河海大学,全国重点大学,学生,登陆界面">
+	<meta name="description" content="一所有百年办学历史，以水利为特色，工科为主，多学科协调发展的教育部直属，教育部、水利部、国家海洋局与江苏省人民政府共建的全国重点大学————河海大学的学生登陆界面！">
+	<!-- 外部引用css样式 -->
+	<link href="E:\web_tasks\F0\style.css" rel="stylesheet" type="text/css">
+	<!-- 外部引用js样式 -->
+	<script type="text/javascript" src="E:\web_tasks\F0\outer.js"></script>
+	<title>欢迎登录河海大学官网</title>
+
+</head>
+
+<body id="background">
+	<div id="content">
+		
+		<!-- -------------------- 欢迎界面 ------------------- -->
+		<div id="welcome">
+			<p>欢迎登录河海大学官网</p>
+		</div>
+		
+		<!-- -------------------- 登录界面 ------------------- -->
+		<div id="block">
+		<!-- 登录表单，使用post方法提交，此处用河海大学官网代替服务器端 -->
+			<form name="loginForm" id="loginForm" method="post" action="http://www.hhu.edu.cn/">
+				<div class="item">
+					<label for="username" style="background-image: url(E://web_tasks//F0//pic//icon_user.png); background-repeat: no-repeat; color: #fff">____</label>
+					<input type="text" name="username" id="username" placeholder="请输入学号">
+					<span>&nbsp&nbsp&nbsp&nbsp</span>
+					<a href="forget.html" id="findpwd">找回密码</a></br>
+				</div>
+
+				<div class="item">
+					<label for="username" style="background-image: url(E://web_tasks//F0//pic//icon_pw.png); background-repeat: no-repeat; color: #fff">____</label>
+					<input type="password" name="password" id="password" placeholder="请输入密码">
+					<input type="checkbox" id="option" name="option" onchange="change();">
+					<label for="option">显示密码</label></br>
+				</div>
+
+				<div class="item">
+					<input type="checkbox" name="rememberName" id="rememberName" value="记住密码"/>记住密码
+					<!-- 点击此处链接跳转到“忘记密码”界面，以后完善 -->
+					<input type="checkbox" name="rememberName" id="autoLogin" value="自动登陆"/>自动登录
+				</div>
+
+				<div id="btn_login">
+					<input type="button" name="submit" id="submit" class="btn" value="登录"/>
+				</div>
+				<div id="btn_register">
+					<input type="button" name="register" id="register" class="btn" value="立即注册"/>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+<footer id="footer">
+	"技术支持：" <a href="https://github.com/Servon-Lee" target="_blank" style="color: #fff">Servon</a>
+	" 咨询邮箱："<a href="mailto:lzw879251286@vip.qq.com" style="text-decoration: none;color: #fff">lzw879251286@vip.qq.com</a>
+	"&nbsp;&nbsp;版权所有©Servon
+</footer>
+</html>

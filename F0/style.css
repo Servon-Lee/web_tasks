@@ -1,4 +1,4 @@
-#background {
+.background {
     width: 100%;
     height: auto;
     background-image: url("E://web_tasks//F0//pic//hhu.png");
@@ -6,7 +6,7 @@
     background-size: cover;
 }
 
-#content {
+.content {
 	position:relative;
 	margin: 50px auto;
 	margin-bottom: 100px;
@@ -16,7 +16,7 @@
 	opacity: 0.8;
 }
 
-#welcome {
+.welcome {
 	padding-top: 10px;
 	font-size: 30px;
 	text-align: center;
@@ -24,7 +24,7 @@
 	font-weight: bolder;
 }
 
-#block {
+.block {
 	text-align: center;
 }
 
@@ -32,13 +32,13 @@
 	margin-top: 20px;
 }
 
-#rememberName {
+.rememberName {
 	font-size:16px;
 	color:#666;
 	margin:30px,0;
 }
 
-#findpwd {
+.findpwd {
 	text-decoration: none;
 	color: #666;
 }
@@ -68,11 +68,11 @@
 	border:1px solid #0274c0;
 }
 
-#btn_login {
+.btn_login {
 	margin-top: 20px;
 }
 
-#btn_register {
+.btn_register {
 	margin-top: 10px;
 }
 

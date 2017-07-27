@@ -15,9 +15,8 @@ function addinfo() {
   var major = $('#major').val().trim();
   var phone =  $('#phone').val().trim();
 	var stu = new student(name, num, major, phone);
-	students.push(stu);
+  students.push(stu);
 	storage.setItem('stuArr', JSON.stringify(students));
-	// alert(stus[0].name+stus[0].phone);
 	alert("增加成功！");
 }
 
@@ -75,4 +74,32 @@ function queryinfo(){
 	}else{
 		alert("此人不存在，查询失败！");
 	}
+}
+
+function queryAll(){
+  var stus = JSON.parse(storage.getItem('stuArr'));
+	for (var i = 0; i < stus.length; i++){
+    if(stus[i] == null){
+      alert('没有学生信息！');
+    }else{
+      var mytable = document.getElementById('studentstable');
+      var mytr = document.createElement('tr');
+      var mytd1 = document.createElement('td');
+      var mytd2 = document.createElement('td');
+      var mytd3 = document.createElement('td');
+      var mytd4 = document.createElement('td');
+      var mytbody = document.createElement('tbody');
+      mytd1.innerHTML = stus[i].name;
+      mytd2.innerHTML = stus[i].num;
+      mytd3.innerHTML = stus[i].major;
+      mytd4.innerHTML = stus[i].phone;
+      mytr.appendChild(mytd1);
+      mytr.appendChild(mytd2);
+      mytr.appendChild(mytd3);
+      mytr.appendChild(mytd4);
+      mytbody.appendChild(mytr);
+      mytable.appendChild(mytbody);
+    }
+
+  }
 }

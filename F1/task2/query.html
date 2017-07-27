@@ -15,8 +15,8 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1>学生信息管理系统——查</h1>
+  <div class="container" id="container">
+    <h1 class="page-header">学生信息管理系统——查</h1>
 
     <form class="add"  method="post">
       <div class="form-group">
@@ -24,9 +24,22 @@
           <label for="num" class="float-label">学号</label>
       <div class="">
         <button id="cancel" class="btn btn-default" type="reset">取消</button>
-        <button id="ok" class="btn btn-primary" onclick="queryinfo()">确定</button>
+        <button id="ok" class="btn btn-primary" onclick="queryinfo()">查询</button>
+        <input type="button" value="返回" class="btn btn-default pull-right" onclick="history.go(-1)">
       </div>
     </form>
 
   </div>
+  <h2 class="leader page-header">学生信息</h2>
+  <div class="">
+    <button id="all" class="btn btn-success" onclick="queryAll()">查询所有</button>
+  </div><br>
+  <table class="table table-bordered table-hover" id="studentstable">
+    <tr>
+      <th>姓名</th>
+      <th>学号</th>
+      <th>专业</th>
+      <th>电话号码</th>
+    </tr>
+  </table>
 </body>

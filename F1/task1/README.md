@@ -2,7 +2,7 @@
 ===========
 内容说明
 -------------
-*使用Bootstrap jQuery配合JavaScript完善上一次任务的登录页面<br>
+*使用Bootstrap jQuery配合JavaScript完善上一次任务的登录页面 (效果图1)<br>
 *登录页面实现响应式布局<br>
 
 效果图详见pic

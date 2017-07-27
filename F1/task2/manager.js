@@ -14,17 +14,18 @@ function addinfo() {
   var num =  $('#num').val().trim();
   var major = $('#major').val().trim();
   var phone =  $('#phone').val().trim();
-	var stu = {"name":name, "num":num, "major":major, "phone":phone};
+	var stu = new student(name, num, major, phone);
 	students.push(stu);
-	localStorage.setItem("student",JSON.stringify(stu));
+	storage.setItem('stuArr', JSON.stringify(students));
+	// alert(stus[0].name+stus[0].phone);
 	alert("增加成功！");
 }
 
 function getStudent(num){
-	for (var i = 0; i < students.length; i++) {
-		stu = JSON.parse(localStorage.getItem("student"));
-		if(stu.num == num){
-			return JSON.stringify(stu);
+	var stus = JSON.parse(storage.getItem('stuArr'));
+	for (var i = 0; i < stus.length; i++) {
+		if(stus[i].num == num){
+			return stus[i];
 		}else{
 			return null;
 		}
@@ -36,6 +37,7 @@ function delinfo(){
 	var stu = getStudent(num);
 	if(stu != null){
 		students.splice(students.indexOf(stu), 1);
+		storage.setItem('stuArr', JSON.stringify(students));
 		alert("删除成功！");
 	}else{
 		alert("此人不存在，删除失败！");
@@ -45,29 +47,32 @@ function delinfo(){
 function modifyinfo(){
 	var num = $('#num').val().trim();
 	var stu = getStudent(num);
-	if(stu == null){
-		alert("此人不存在，修改失败！");
-	}else{
+	if(stu != null){
 		var name = $('#name').val().trim();
 	  var major = $('#major').val().trim();
 	  var phone =  $('#phone').val().trim();
 		stu.name = name;
 		stu.major = major;
 		stu.phone = phone;
+		students.push(stu);
+		storage.setItem('stuArr', JSON.stringify(students));
+		alert("修改成功！");
+	}else{
+		alert("此人不存在，修改失败！");
 	}
 }
 
 function queryinfo(){
 	var num = $('#num').val().trim();
 	var stu = getStudent(num);
-	if(stu == null){
-		alert("此人不存在，查询失败！");
-	}else{
+	if(stu != null){
 		alert(
-			"姓名："+num.name+
-			"学号："+num.num+
-			"专业："+num.major+
-			"电话号码："+num.phone
+			"姓名："+stu.name+'\n'+
+			"学号："+stu.num+'\n'+
+			"专业："+stu.major+'\n'+
+			"电话号码："+stu.phone+'\n'
 		);
+	}else{
+		alert("此人不存在，查询失败！");
 	}
 }

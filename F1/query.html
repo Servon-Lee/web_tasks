@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>学生信息管理系统</title>
+  <!-- 包含头部信息用于适应不同设备 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 包含 bootstrap 样式表 -->
+  <link rel="stylesheet" href="bs/css/bootstrap.min.css">
+  <!-- 外部引用css样式 -->
+  <link href="style2.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="manager.js"></script>
+  <script src="bs/js/jquery.min.js"></script>
+  <script src="bs/js/bootstrap.js"></script>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <h1 class="page-header">学生信息管理系统——查</h1>
+
+    <form class="add"  method="post">
+      <div class="form-group">
+          <input id="num" class="form-control" type="text" size="18" alt="num" required="required">
+          <label for="num" class="float-label">学号</label>
+      <div class="">
+        <button id="cancel" class="btn btn-default" type="reset">取消</button>
+        <button id="ok" class="btn btn-primary" onclick="queryinfo()">查询</button>
+        <input type="button" value="返回" class="btn btn-default pull-right" onclick="history.go(-1)">
+      </div>
+    </form>
+
+  </div>
+  <h2 class="leader page-header">学生信息</h2>
+  <div class="">
+    <button id="all" class="btn btn-success" onclick="queryAll()">查询所有</button>
+  </div><br>
+  <table class="table table-bordered table-hover" id="studentstable">
+    <tr>
+      <th>姓名</th>
+      <th>学号</th>
+      <th>专业</th>
+      <th>电话号码</th>
+    </tr>
+  </table>
+</body>

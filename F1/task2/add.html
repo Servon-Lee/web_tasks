@@ -16,7 +16,7 @@
 
 <body>
   <div class="container">
-    <h1>学生信息管理系统——增</h1>
+    <h1 class="page-header">学生信息管理系统——增</h1>
 
     <form class="add"  method="post">
       <div class="form-group">
@@ -37,6 +37,7 @@
       </div>
       <button id="cancel" class="btn btn-default" type="reset">取消</button>
       <button id="ok" class="btn btn-primary" onclick="addinfo()">确定</button>
+      <input type="button" value="返回" class="btn btn-default pull-right" onclick="history.go(-1)">
     </form>
 
   </div>

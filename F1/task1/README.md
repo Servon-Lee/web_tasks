@@ -7,4 +7,4 @@
 
 效果图详见pic
 -----------
-![]https://github.com/Servon-Lee/web_tasks/tree/master/F1/task1/pic
+https://github.com/Servon-Lee/web_tasks/tree/master/F1/task1/pic

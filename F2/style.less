@@ -1,0 +1,56 @@
+@white: #fff;
+@btn-bg: rgba(0,0,0,50%);
+@btn-hover-bg: rgba(0,0,0,70%);
+@btn-width: 60px;
+@btn-height: 100px;
+
+#igs {
+  padding: 0px;
+  margin: 0px;
+  .ig {
+    position: absolute;
+  }
+}
+
+.btn {
+  position: absolute;
+  height: @btn-height;
+  width: @btn-width;
+  background: @btn-bg;
+  color: @white;
+  line-height: @btn-height;
+  text-align: center;
+  font-size: 50px;
+  top: 200px;;
+  cursor: pointer;
+  &:hover {
+    background: @btn-hover-bg;
+    color: @white;
+  }
+}
+
+.btn2 {
+  left: 1130-@btn-width;
+}
+
+#tabs {
+    position: absolute;
+    top: 450px;
+    left: 500px;
+    .tab {
+      width: 10px;
+      height: 10px;
+      float:left;
+      line-height: 10px;
+      text-align: center;
+      color: @white;
+      margin-right: 25px;
+      border: 1px solid @white;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+}
+
+.bg {
+  background: @white;
+}

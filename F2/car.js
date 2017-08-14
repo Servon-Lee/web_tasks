@@ -18,7 +18,7 @@ $(function(){
   });
 
   $('.ig').eq(0).fadeIn().siblings().fadeOut();
-  //每隔5s自动轮播
+  //每隔3s自动轮播
   ShowTime();
   //鼠标移入tab时跳转到该图片，移出tab时恢复正常
   $('.tab').hover(function(){

@@ -1,7 +1,22 @@
-var i = 0;
+var i;
 var timer;
+var slideNum;
+
+$(window).resize(function(){
+   $(".slide").height($(".slide").width()*0.56);
+});
 
 $(function(){
+  slideNum = $(".slide .ig").size();  //获取轮播图片数量
+
+  for(i=0; i<slideNum; i++){
+      $(".slide .ig:eq("+i+")").attr("data-slide-imgId",i);
+  }
+
+  $(window).resize(function(){
+     $('.igs').height($('.igs').width()*0.56);
+  });
+
   $('.ig').eq(0).fadeIn().siblings().fadeOut();
   //每隔5s自动轮播
   ShowTime();
@@ -11,31 +26,19 @@ $(function(){
     i = $(this).index();
     Show();
     //为了让用户仔细（有充足的时间）看图片内容，此时停止轮播
-    clearInterval(timer);
+    clearTimeout(timer);
   }, function(){
-    //鼠标移入后轮播继续
+    //鼠标移出后轮播继续
     ShowTime();
   });
 
   //当点击前后翻页时
   $('.btn1').click(function(){
-    clearInterval(timer);
-    if(i==0){
-      i = $('.ig').size();
-    }
-    i--;
-    Show();
-    ShowTime();
+    pre();
   });
 
   $('.btn2').click(function(){
-    clearInterval(timer);
-    if(i==$('.ig').size()-1){
-      i = -1;
-    }
-    i++;
-    Show();
-    ShowTime();
+    back();
   });
 
   $(document).on("pagecreate","#igs",function(){
@@ -52,7 +55,32 @@ $(function(){
     });
   });
 
+  if(touch){
+      touch();
+      Show();
+  }
+
 });
+
+function pre(){
+  clearTimeout(timer);
+  if(i==0){
+    i = $('.ig').size();
+  }
+  i--;
+  Show();
+  ShowTime();
+}
+
+function back(){
+  clearTimeout(timer);
+  if(i==$('.ig').size()-1){
+    i = -1;
+  }
+  i++;
+  Show();
+  ShowTime();
+}
 
 //tab跟随图片变换颜色
 function Show(){
@@ -62,7 +90,7 @@ function Show(){
 
 //需反复调用，封装成函数
 function ShowTime(){
-  timer = setInterval(function(){
+  timer = setTimeout(function(){
     i++;
     if(i==$('.ig').size()){
       i=0;
@@ -70,3 +98,29 @@ function ShowTime(){
     Show();
   }, 3000);
 };
+
+//触摸滑动模块
+function k_touch() {
+    var start = 0, end = 0, content = document.getElementById("slide");
+    content.addEventListener("touchstart", touchStart, false);
+    content.addEventListener("touchmove", touchMove, false);
+    content.addEventListener("touchend", touchEnd, false);
+    function touchStart(event) {
+        var touch = event.targetTouches[0];
+        start = touch.pageX;
+    }
+    function touchMove(event) {
+        var touch = event.targetTouches[0];
+        end = (start - touch.pageX);
+    }
+
+    function touchEnd(event) {
+        if (end < -100) {
+            pre();
+            end=0;
+        }else if(end > 100){
+            back();
+            end=0;
+        }
+    }
+}

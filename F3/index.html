@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>色彩选择器</title>
+
+<link rel="stylesheet" href="colorpicker.css" type="text/css" />
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="colorpicker.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#colorpickerHolder').ColorPicker({flat: true});
+});
+</script>
+</head>
+<body>
+    <div class="pagedemo">
+        <h1>色彩选择器 - jQuery插件</h1>
+        <div class="tabsContent">
+            <div class="tab">
+                <p id="colorpickerHolder"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
